@@ -1,0 +1,42 @@
+var Word = require('./Word.js');
+var inquirer = require('inquirer');
+var randomWords = require('random-words');
+// var word = new Word('Sherif');
+// var isCorrect = false;
+// console.log('' + word);
+// isCorrect = word.guess('i');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+// isCorrect = word.guess('e');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+// isCorrect = word.guess('x');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+// isCorrect = word.guess('x');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+// isCorrect = word.guess('r');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+// isCorrect = word.guess('s');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+// isCorrect = word.guess('h');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+// isCorrect = word.guess('f');
+// console.log('' + word);
+// console.log(isCorrect ? "CORRECT!!" : "INCORRECT!!!");
+// console.log(word.isGuessed() ? "DONE!!!" : "NOT YET");
+function Game() {
+    this.remainingGuesses = 10;
+
+}
