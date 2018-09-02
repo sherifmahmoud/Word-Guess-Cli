@@ -4,7 +4,7 @@ var randomWords = require('random-words');
 var colors = require('colors/safe');
 
 function Game() {
-    this.inCorrectGuesses = '';
+    this.inCorrectGuesses = '';//list of previous incorrect guesses kept in a string
     this.isRunning = false;
     this.initialize = initialize;
     this.askForGuess = askForGuess;
@@ -12,13 +12,13 @@ function Game() {
     this.displayWord = displayWord;
 }
 function initialize() {
-    this.remainingGuesses = 10;
-    this.isRunning = true;//flag that the game is running
+    this.remainingGuesses = 10;//start the game with 10 wrong guesses remaining
+    //request a random word with a max length of ten letters
     this.secret = new Word(randomWords({ exactly: 1, maxLength: 10 })[0]);
 }
 function askForGuess() {
 
-    var game = this;
+    var game = this;//game variable to be used inside the inquirer callback as using this won't be correct inside the callback
     var isCorrectGuess = false;
     //repeat until the user guesses the word or no more remaining guesses
     if (!this.secret.isGuessed() && this.remainingGuesses > 0) {
@@ -37,9 +37,12 @@ function askForGuess() {
             if (!isCorrectGuess) {
                 console.log(colors.red("INCORRECT!!\n"));
                 if (!game.inCorrectGuesses.includes(answer.guess)) {
+                    //just count a wrong guess the first time the user do it
                     game.remainingGuesses--;
+                    //add the wrong guess to the list of previous wrong guesses
                     game.inCorrectGuesses += answer.guess;
                 }
+                //show a list of previous wrong guesses
                 console.log(`[${game.inCorrectGuesses.toUpperCase().split('').join(' ')}]\n`);
                 console.log(`${game.remainingGuesses} guesses remaining\n`);
             } else {
