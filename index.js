@@ -42,7 +42,7 @@ function askForGuess() {
                 console.log(`${game.remainingGuesses} guesses remaining\n`);
             } else {
                 console.log("CORRECT!!\n");
-                console.log(`[${game.inCorrectGuesses}]\n`);
+                console.log(`[${game.inCorrectGuesses.toUpperCase().split('').join(' ')}]\n`);
             }
             game.askForGuess();
         });
